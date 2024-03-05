@@ -20,3 +20,12 @@ jobs:
           npm install
           npm list
 
+      - name: Cypress E2E
+        uses: cypress-io/github-action@v4
+        with:
+          browser: chrome
+          command: npm run cypress:open
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+          GITHUB_TOKEN: ${{secrets.CYPRESS_GITHUB_TOKEN}}
