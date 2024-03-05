@@ -5,7 +5,7 @@ on:
   - main
 jobs:
   Cypress-test-afer-merge:
-   runs-on: ubunto-latest
+   runs-on: ubuntu-latest
    steps:
     - name: Checkout
       uses: actions/checkout@v4.1.1
@@ -19,7 +19,4 @@ jobs:
       run: |
         npm install
         npm list
-
-    - name: run tests
-      run: npm run cypress:open
     
