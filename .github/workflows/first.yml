@@ -20,5 +20,6 @@ jobs:
         npm install
         npm list
 
-        
+    - name: run tests
+      run: npm run cypress:open
     
