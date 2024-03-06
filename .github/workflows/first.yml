@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+env:
+  env_var: ${{ vars.CYPRESS_CONFIG }}
 jobs:
   Cypress-test-afer-merge:
     runs-on: ubuntu-latest
@@ -26,4 +28,6 @@ jobs:
           browser: chrome
           record: true
           env: |
-            CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+           CYPRESS_RECORD_KEY: ${{ vars.CYPRESS_RECORD_KEY }}
+           CYPRESS_GITHUB_TOKEN: ${{ vars.CYPRESS_GITHUB_TOKEN }}
+            
